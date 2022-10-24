@@ -12,10 +12,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Teckwei1993\\Otp\\OtpServiceProvider"
+                "Radon\\Otp\\OtpServiceProvider"
             ],
             "aliases": {
-                "Otp": "Teckwei1993\\Otp\\OtpFacade"
+                "Otp": "Radon\\Otp\\OtpFacade"
             }
         }
     },
@@ -25,7 +25,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Teckwei1993\\Otp\\": "src"
+            "Radon\\Otp\\": "src"
         }
     }
 }

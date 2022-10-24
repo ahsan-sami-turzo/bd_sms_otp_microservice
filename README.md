@@ -8,14 +8,14 @@ The cache connection same as your laravel cache config and it supported: "apc", 
 ### Install via composer
 
 ```bash
-composer require teckwei1993/laravel-otp
+composer require radon/laravel-otp
 ```
 ## Configuration
 
 Publish config and language file
 
 ```bash
-php artisan vendor:publish --provider="Teckwei1993\Otp\OtpServiceProvider"
+php artisan vendor:publish --provider="Radon\Otp\OtpServiceProvider"
 ```
 
 ```
@@ -113,7 +113,7 @@ $result = Otp::validate('reg:name@domain.com', '123456');
 ```php
 // in a `FormRequest`
 
-use Teckwei1993\Otp\Rules\OtpValidate;
+use Radon\Otp\Rules\OtpValidate;
 
 public function rules()
 {
@@ -138,7 +138,7 @@ $result = Otp::validate('123456');
 
 // in a `FormRequest`
 
-use Teckwei1993\Otp\Rules\OtpValidate;
+use Radon\Otp\Rules\OtpValidate;
 
 public function rules()
 {
@@ -205,7 +205,7 @@ $result = Otp::setSensitive(true)->validate('identifier-key-here', 'password-her
 
 // in controller
 
-use Teckwei1993\Otp\Rules\OtpValidate;
+use Radon\Otp\Rules\OtpValidate;
 
 $request->validate([
     'code' => ['required', new OtpValidate('identifier-key-here', ['sensitive' => true])]
@@ -243,7 +243,7 @@ $result = Otp::setDisposable(false)->validate('login-confirmation', 'password-he
 
 // in controller
 
-use Teckwei1993\Otp\Rules\OtpValidate;
+use Radon\Otp\Rules\OtpValidate;
 
 $request->validate([
     'code' => ['required', new OtpValidate('login-confirmation', ['disposable' => false])]
@@ -274,7 +274,7 @@ $result = Otp::setSkip(true)->validate('identifier-key-here', 'password-here');
 
 // in controller
 
-use Teckwei1993\Otp\Rules\OtpValidate;
+use Radon\Otp\Rules\OtpValidate;
 
 $request->validate([
     'code' => ['required', new OtpValidate('identifier-key-here', ['skip' => true])]
